@@ -103,7 +103,10 @@ function App() {
                 </div>
                 <h5 className="mt-3">更多圖片：</h5>
                 <div className="d-flex flex-wrap">
-                  { }
+                  {tempProduct.imagesUrl.map(
+                    (image, index) => (<img className="w-50 p-2" key={index} src={image} />)
+                  )
+                  }
                 </div>
               </div>
             </div>
@@ -112,7 +115,7 @@ function App() {
           )}
         </div>
       </div>
-    </div>
+    </div >
   );
 }
 
