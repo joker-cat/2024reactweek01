@@ -1,6 +1,6 @@
 function App() {
-  const [tempProduct, setTempProduct] = React.useState(null);
-  const [products, setProducts] = React.useState([
+  const [tempProduct, setTempProduct] = React.useState(null); //存放被選擇的商品
+  const [products, setProducts] = React.useState([ //假資料
     {
       category: "甜甜圈",
       content: "尺寸：14x14cm",
@@ -87,7 +87,8 @@ function App() {
         </div>
         <div className="col-md-6">
           <h2>單一產品細節</h2>
-          {tempProduct ? (
+          {tempProduct ? ( //判斷是否有選擇商品
+            // 有就顯示選擇的商品
             <div className="card mb-3">
               <img src={tempProduct.imageUrl} className="card-img-top primary-image" alt="主圖" />
               <div className="card-body">
@@ -110,7 +111,9 @@ function App() {
                 </div>
               </div>
             </div>
-          ) : (
+          ) :
+          // 沒有就顯示"請選擇一個商品查看"
+          (
             <p className="text-secondary">請選擇一個商品查看</p>
           )}
         </div>
